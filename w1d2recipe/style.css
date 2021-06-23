@@ -1,6 +1,6 @@
 body {
     background-image: url("recipeImages/silverware.jpg");
-    background-repeat: repeat-y repeat-x;
+    background-repeat: repeat;
 }
 
 h1 {
