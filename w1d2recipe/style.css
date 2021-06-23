@@ -1,3 +1,8 @@
+body {
+    background-image: url("recipeImages/silverware.jpg");
+    background-repeat: repeat-y repeat-x;
+}
+
 h1 {
     color: #a7a716;
     background-color: #f0f0f0;
