@@ -1,0 +1,23 @@
+h1 {
+    color: #a7a716;
+    background-color: #f0f0f0;
+}
+
+.center{
+    text-align: center;
+}
+
+.comments{
+    background-color: #feffa8;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.format{
+    font-weight: bold;
+}
+
+.right{
+    text-align: right;
+}
+
