@@ -63,6 +63,14 @@ h1 {
 
 }
 
+dd {
+    margin-bottom: 15px;
+}
+
+dt {
+    font-weight: bold;
+}
+
 .redtext {
     color: #f10000;
     font-size: 400%;
