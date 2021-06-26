@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+/* runs test to see if expected argument is === to value returned by function2test argument */
+function myFunctionTest(expected, found) {
+  if (expected === found) {
+    return "TEST SUCCEEDED";
+  } else {
+    return "TEST FAILED.  Expected " + expected + " found " + found;
+  }
+}
+
+/* max returns the maximum of 2 arguments */
+function max(a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  };
+}
+
+
+/* max3 takes 3 numbers as arguments and returns the largest */
+function maxOfThree(a, b, c) {
+  return max(max(a, b), c);
+
+}
+
+
+/* takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. */
+function isVowel(ch){
+  let vowelList = ['a', 'e', 'i', 'o', 'u'];
+  if(vowelList.includes(ch)) {
+    return true;
+  } else{
+    return false;
+  }
+}
+
+
+/* sums all the numbers in an array of numbers */
+function sum(arr){
+  let result = 0;
+  for(i =0; i<arr.length; i++){
+    result+= arr[i];
+  }
+  return result;
+}
+
+
+
+/* multiplies all the numbers in an array of numbers */
+function multiply(arr){
+let result = 1;
+  for(i =0; i<arr.length; i++){
+    result= result * arr[i];
+  }
+  return result;
+}
+
+
+/* computes the reversal of a string */
+function reverse(str) {
+    let newString = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+
+
+/* takes an array of words and returns the length of the longest one. */
+function findLongestWord(arr){
+  let result = arr[0].length;
+  for (let i = 0; i<arr.length; i++){
+    if(arr[i].length > result){
+      result = arr[i].length;
+    }
+  }
+  return result;
+}
+
+
+/* takes an array of words and an integer i and returns the array of words that are longer than i */
+function filterLongWords(arr, i){
+let result = [];
+  for (let j = 0; j<arr.length; j++){
+    if(arr[j].length > i){
+      result.push(arr[j]);
+    }
+  }
+  return result;
+}
+
+
+//Tests for max function
+console.log("Expected output of max(90,44) is 90  " + myFunctionTest(90, max(90, 44)));
+console.log("Expected output of max(20,10) is 20  " + myFunctionTest(20, max(20, 10)));
+// console.assert for test max
+console.assert(max(90,40), 90);
+
+
+
+//Tests for maxOfThree function
+console.log("Expected output of maxOfThree(5,4,44) is 44  " + myFunctionTest(44, maxOfThree(5, 4, 44)));
+console.log("Expected output of maxOfThree(55,4,44) is 55  " + myFunctionTest(55, maxOfThree(55, 4, 44)));
+
+
+
+//Tests for isVowel function
+console.log("Expected output of isVowel('a') is true  " + myFunctionTest(true, isVowel('a')));
+console.log("Expected output of isVowel('z') is false  " + myFunctionTest(false, isVowel('z')));
+// console.assert for test max
+console.assert(isVowel('e'), true);
+
+
+//Tests for sum function
+console.log("Expected output of sum([2,3,1,2]) is 8  " + myFunctionTest(8, sum([2,3,1,2])));
+console.log("Expected output of sum([2,3,1,2]) is 2  " + myFunctionTest(2, sum([2,3,1,2])));
+// console.assert for test sum
+console.assert(sum([2,3,1,2]), 8);
+
+
+
+//Tests for multiply function
+console.log("Expected output of multiply([2,3,1]) is 6  " + myFunctionTest(6, multiply([2,3,1])));
+console.log("Expected output of multiply([2,3,1]) is 9  " + myFunctionTest(9, multiply([2,3,1])));
+// console.assert for test multiply
+console.assert(multiply([2,3,1]), 6);
+
+
+//Tests for reverse function
+console.log("Expected output of reverse(beauty) is ytuaeb  " + myFunctionTest("ytuaeb", reverse("beauty")));
+console.log("Expected output of reverse(beauty) is bytuae  " + myFunctionTest("bytuae", reverse("beauty")));
+// console.assert for test reverse
+console.assert(reverse("beauty"), "ytuaeb");
+
+
+
+//Tests for findLongestWord function
+console.log("Expected output of findLongestWord(beauty, blue, by) is 6 " + myFunctionTest(6, findLongestWord(["beauty", "blue", "by"])));
+console.log("Expected output of findLongestWord(beauty, blue, by) is 2" + myFunctionTest(2, findLongestWord(["beauty", "blue", "by"])));
+// console.assert for test findLongestWord
+console.assert(findLongestWord(["beauty", "blue", "by"]), 2);
+
+
+//Tests for filterLongWords function
+//arrays are objects in JavaScript, so the triple equals operator === only returns true if the arrays are the same reference; not in this case.
+console.log("Expected output of filterLongWords([view, mountain, blue, assignment, by],5) is [mountain, assignment]" + myFunctionTest(["mountain", "assignment"], filterLongWords(["view", "mountain", "blue", "assignment", "by"],5)));
+
+// console.assert for test findLongestWord
+console.assert(filterLongWords(["view", "mountain", "blue", "assignment", "by"],5), ["mountain", "assignment"]);
+
+
+
+const a = [1,3,5,3,3]; 
+
+
+/* multiply each element by 10 */
+const a1 = a.map(function(elem,i,array){
+  return elem * 10;
+})
+
+// console.assert for test multiply each element by 10
+console.assert(a1, [10,30,50,30,30]);
+console.log(a1);
+
+
+
+
+/* return array with all elements equal to 3 */
+const b2 = a.filter(function(elem,i,array){
+   return elem == 3;
+})
+
+// console.assert for test array with all elements equal to 3 
+console.assert(b2, [3,3,3]);
+console.log(b2);
+
+
+
+
+/* return the product of all elements */
+const c = a.reduce(function(prev, curr){
+    return prev * curr;
+})
+
+// console.assert for test return the product of all elements
+console.assert(c, 135);
+console.log(c);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+Look in the Chrome developer console to see the output. CTRL_SHIFT_J <br />
+Or on Firefox with CTRL_SHIFT_K
+
+</body>
+</html>
