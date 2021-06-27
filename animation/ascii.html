@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+		<title>CS472: ASCII Animation Viewer</title>
+        <link href="ascii.css" type="text/css" rel="stylesheet">		
+        <script src="animations.js"></script>				
+		<script src="ascii.js"></script>				
+	</head>
+
+	<body>		
+        <div id="div_overall">
+            <h1>CSE 190 M ASCII Animation Viewer</h1>
+            <textarea id="textASCII" class="textascii" rows="20" cols="80"></textarea>        
+            <br>
+            <div>
+                <fieldset>
+                    <legend>Play Controls:</legend>
+                    <button id="btnStart">Start</button>
+                    <button id="btnStop">Stop</button>                    
+                </fieldset>
+                <fieldset>
+                    <legend>Animation:</legend>
+                    <select id="optAnimation">                        
+                        <option>Blank</option>
+                        <option>Exercise</option>
+                        <option>Juggler</option>
+                        <option>Bike</option>
+                        <option>Dive</option>
+                        <option>Custom</option>
+                    </select>              
+                </fieldset>
+                <fieldset>
+                    <legend>Size:</legend>
+                    <select id="optSize">                            
+                        <option>Tiny</option>
+                        <option>Small</option>
+                        <option selected>Medium</option>
+                        <option>Large</option>
+                        <option>Extra Large</option>
+                        <option>XXL</option>
+                    </select>              
+                </fieldset>
+                <fieldset>
+                    <legend>Speed:</legend>
+                    <input type="checkbox" id="checkBoxTurbo">Turbo
+                </fieldset>
+                <br>
+                <div id="id_validator">
+                    <a href="https://validator.w3.org/check?uri=severinolat.github.io/cs472/animation/ascii.html"><img src="img/w3c-html.png" alt="Valid HTML5" /></a> <br />
+			        <a href="https://jigsaw.w3.org/css-validator/validator?uri=severinolat.github.io/cs472/animation/ascii.css"><img src="img/w3c-css.png" alt="Valid CSS" /></a>
+	
+                  </div>                
+            </div>
+        </div>
+		<!-- Your UI controls go here -->
+		
+	
+
+</body></html>
