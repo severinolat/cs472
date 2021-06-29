@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // initialize mocha
+        mocha.setup('bdd');
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+
+    </script>
+    <script>
+
+/* runs test to see if expected argument is === to value returned by function2test argument */
+function myFunctionTest(expected, found) {
+  if (expected === found) {
+    return "TEST SUCCEEDED";
+  } else {
+    return "TEST FAILED.  Expected " + expected + " found " + found;
+  }
+}
+
+
+
+/* sum all the numbers in an array of numbers */
+function sum(arr){
+    return arr.reduce((x,y)=>x+y);
+}
+
+
+
+/* multiplies all the numbers in an array of numbers */
+function multiply(arr){
+    return arr.reduce((x,y)=>x*y);
+}
+
+
+/* computes the reversal of a string */
+
+
+function reverse(str) {
+    return str.split("").reduce((rev, char)=> char + rev, ''); 
+}
+
+
+
+/* takes an array of words and an integer i and returns the array of words that are longer than i */
+
+function filterLongWords(arr, i){
+
+  let result = arr.filter((elm)=> elm.length>i);
+  return result;
+}
+
+
+
+
+
+//Tests for sum function
+describe("sum", function () {
+            it("sum all the numbers in an array of numbers",
+                function () {
+                    assert.equal(8, sum([2,3,1,2]));
+                });
+        });
+
+
+
+//Tests for multiply function
+
+describe("multiply", function () {
+            it("multiply all the numbers in an array of numbers",
+                function () {
+                    assert.equal(6, multiply([2,3,1]));
+                });
+        });
+
+
+
+
+//Tests for reverse function
+
+describe("reverse", function () {
+            it("computes the reversal of a string",
+                function () {
+                    assert.equal("ytuaeb", reverse("beauty"));
+                });
+        });
+
+
+
+
+//Tests for filterLongWords function
+
+describe("filterLongWords", function () {
+            it("takes an array of words and an integer i and returns the array of words that are longer than i",
+                function () {
+                    assert.equal(["mountain", "assignment"], filterLongWords(["view", "mountain", "blue", "assignment", "by"],5));
+                });
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+
+Look in the Chrome developer console to see the output. CTRL_SHIFT_J <br />
+Or on Firefox with CTRL_SHIFT_K
+
+<div id="mocha"></div>
+    <script>
+        mocha.run();
+
+    </script>
+
+</body>
+</html>

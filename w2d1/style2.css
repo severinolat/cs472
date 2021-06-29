@@ -1,0 +1,11 @@
+.content{
+    margin: 100px;
+}
+
+ul li {
+    margin-left: 40px;
+    margin-top: 0;
+    border-left: 2px solid white;
+   
+    
+  }
