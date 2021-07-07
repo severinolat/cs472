@@ -1,0 +1,16 @@
+body{
+    background-color:whitesmoke;
+    opacity: 0.8;
+}
+
+.circle{
+    position: relative;
+    top: 200px;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid purple;
+    background-color: brown;
+    border-radius: 100%;
+    float: left;
+}
