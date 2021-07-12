@@ -1,0 +1,31 @@
+<%- include('./productList.ejs') %> 
+<body>
+        <div><a href='/shoppingcart'>View products in Cart</a></div>
+        <div><a href='/'>Add more Item</a></div>
+        <div class="row">
+            <!--Card 1-->
+            <% for(const item of itemList){ %>
+            <div class="col-sm">
+                <div class="card card-cascade card-ecommerce wider shadow mb-5 ">
+                    <!--Card image-->
+                    <div class="view view-cascade overlay text-center">  </div>
+                    <!--Card Body-->
+                    <div class="card-body card-body-cascade text-center">
+                        <!--Card Title-->
+                        <h4 class="card-title"><strong><a href=""><%= item.name %></a></strong></h4> <!-- Card Description-->
+                        <p class="card-text"><%= item.description %> </p>
+                        <p class="price">ID: <%= item.id %></p>
+                        <p class="price"><%= item.price %></p> <!-- Card Rating-->
+                        
+                        <!--Card footer-->
+                        <div class="card-footer">
+                            <p>ADD TO CART</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %> 
+        </div>
+
+   
+   <%- include('./footer') %>
