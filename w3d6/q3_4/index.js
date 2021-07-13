@@ -9,6 +9,7 @@ app.set('views', path.join(__dirname,'view'));
 
 
 app.use('/css', express.static(path.join(__dirname,"css"))); 
+
 app.use(express.urlencoded({extended : false}));
 
 app.get('/',routeHandler.home);

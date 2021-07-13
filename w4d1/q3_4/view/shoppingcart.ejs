@@ -1,0 +1,22 @@
+<%- include('./productList.ejs') %>
+
+<table>
+<caption>My shoppig cart</caption>
+<tr>
+    <th>Name</th>
+    <th>quantity</th>
+    <th>Price</th>
+</tr>
+
+<% for(const item of products){ %>
+<tr>
+    <td><%= item.name %></td>
+    <td><%= item.quantity %></td>
+    <td><%= item.price %></td>
+</tr>
+<% } %> 
+</table>
+<div><a href='/'>Add more Items to Cart</a></div>
+</body>
+</html>
+

@@ -1,7 +1,7 @@
 const Product = require('./product'); 
 
 module.exports.home = (req, res) => {
-    let style = "night.css";
+    let style = "style.css";
     res.render('registerProducts', {choosenStyle: style});
 }
 
