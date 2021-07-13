@@ -10,7 +10,7 @@ class Product{
         this.price = price;
     }
     saveProduct(){
-        products.push(this);
+        Product.products.push(this);
     }
     static getProducts(){
         return Product.products;

@@ -39,13 +39,17 @@ exports.addProduct = (req, res) => {
 
 
 module.exports.shoppingCart = (req,res) =>{
-    let id = req.body.id;
-    let name = req.body.name;
-    let description = req.body.description;
-    let quantity = req.body.quantity;
-    let price = req.body.price;
-    new Product(id,name,description,quantity, price).saveProduct();
-    res.redirect(303,'/shoppingcart');
+    let product = Cart.getProducts();
+
+    if (!req.session.shoppingCart) {
+        req.session.shoppingCart = {}
+      }
+
+    let quantity = req.session.shoppingCart[req.body.id] && req.session.shoppingCart[req.body.id].quantity || 0;
+    req.session.shoppingCart[product.id] = { ...Product.getProduct(req.body.id), quantity: (quantity) + 1};
+
+    res.render('shoppingcart', { products: Object.values(req.session.shoppingCart)});
+   
 }
 
 
